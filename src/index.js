@@ -49,6 +49,7 @@ class App extends React.Component {
               </tr>
               <tr>
                 <td>
+                  <h2>SearchControl</h2>
                   <SearchControl
                     disabled={false}
                     onSearch={this.handleSearch.bind(this)}
