@@ -27,7 +27,7 @@ export default class DeleteButton extends React.Component {
         <div className="btn-toolbar mr-auto" role="toolbar">
           <button
             type="button"
-            className="btn btn-sm btn-outline-secondary mr-2"
+            className="btn btn-sm btn-outline-secondary me-1"
             data-testid="cancelbutton"
             onClick={handleCancelButtonClick}
           >
