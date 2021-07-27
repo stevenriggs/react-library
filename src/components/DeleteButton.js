@@ -1,18 +1,15 @@
-/// DeleteControl.js
+/// DeleteButton.js
 ///
 /// - Props:
 ///   - onDelete: A function to execute when the user has confirmed deletion
 ///
 /// - Example usage:
-///   <DeleteControl onDelete={this.handleDelete} />
+///   <DeleteButton onDelete={this.handleDelete} />
 
 import React from "react";
 import PropTypes from "prop-types";
-// react-bootstrap
-import Button from "react-bootstrap/Button";
-import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
-class DeleteControl extends React.Component {
+export default class DeleteButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,42 +24,41 @@ class DeleteControl extends React.Component {
       this.setState({ isDeleteClicked: false });
     if (this.state.isDeleteClicked) {
       return (
-        <ButtonToolbar className="mr-auto">
-          <Button
-            variant="outline-secondary"
-            className="mr-2"
+        <div className="btn-toolbar mr-auto" role="toolbar">
+          <button
+            type="button"
+            className="btn btn-sm btn-outline-secondary mr-2"
             data-testid="cancelbutton"
             onClick={handleCancelButtonClick}
           >
             Cancel
-          </Button>
-          <Button
-            variant="danger"
+          </button>
+          <button
+            type="button"
+            className="btn btn-sm btn-danger"
             data-testid="yesdeletebutton"
             onClick={this.props.onDelete}
           >
             Yes, Delete
-          </Button>
-        </ButtonToolbar>
+          </button>
+        </div>
       );
     } else {
       return (
-        <Button
-          variant="outline-danger"
-          className="mr-auto"
+        <button
+          type="button"
+          className="btn btn-sm btn-danger mr-auto"
           data-testid="deletebutton"
           onClick={handleInitialDeleteButtonClick}
         >
           Delete
-        </Button>
+        </button>
       );
     }
   }
 }
 
 // props validation
-DeleteControl.propTypes = {
+DeleteButton.propTypes = {
   onDelete: PropTypes.func,
 };
-
-export default DeleteControl;

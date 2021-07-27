@@ -1,8 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 // components
-import { DeleteControl } from "./lib";
-import { SearchControl } from "./lib";
+import DeleteButton from "./components/DeleteButton";
+import Search from "./components/Search";
 
 class App extends React.Component {
   constructor(props) {
@@ -39,22 +41,18 @@ class App extends React.Component {
             <tbody>
               <tr>
                 <td>
-                  <h2>DeleteControl</h2>
+                  <h2>DeleteButton</h2>
                   <h6 className="py-2">{this.state.itemToDelete}</h6>
                   {this.state.itemToDelete !== "😵I've been deleted" && (
-                    <DeleteControl onDelete={this.handleDelete.bind(this)} />
+                    <DeleteButton onDelete={this.handleDelete.bind(this)} />
                   )}
                 </td>
                 <td>Instructions</td>
               </tr>
               <tr>
                 <td>
-                  <h2>SearchControl</h2>
-                  <SearchControl
-                    disabled={false}
-                    onSearch={this.handleSearch.bind(this)}
-                    text={this.state.search}
-                  />
+                  <h2>Search</h2>
+                  <Search onChange={this.handleSearch.bind(this)} />
                   <h6 className="pt-3">The search is: {this.state.search}</h6>
                 </td>
                 <td>Instructions</td>

@@ -4,7 +4,7 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
-import DeleteControl from "./DeleteControl";
+import DeleteButton from "../components/DeleteButton";
 
 let container = null;
 beforeEach(() => {
@@ -24,7 +24,7 @@ afterEach(() => {
 it("first button changes when clicked", () => {
   const onDelete = jest.fn();
   act(() => {
-    render(<DeleteControl onDelete={onDelete} />, container);
+    render(<DeleteButton onDelete={onDelete} />, container);
   });
 
   // delete button should be present
@@ -53,7 +53,7 @@ it("first button changes when clicked", () => {
 it("executes onDelete when second button is clicked", () => {
   const onDelete = jest.fn();
   act(() => {
-    render(<DeleteControl onDelete={onDelete} />, container);
+    render(<DeleteButton onDelete={onDelete} />, container);
   });
 
   // get ahold of the first button element, and trigger a click on it
