@@ -1,0 +1,9 @@
+{
+  "name": "React Remote Container",
+  "build": { "dockerfile": "Dockerfile" },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "tombonnike.vscode-status-bar-format-toggle"
+  ]
+}
