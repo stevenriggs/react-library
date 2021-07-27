@@ -10,6 +10,12 @@
     "type": "git",
     "url": "https://github.com/stevenriggs/react-library.git"
   },
+  "private": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
   "dependencies": {
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.5.0",
@@ -34,9 +40,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf build && NODE_ENV=production babel src/lib --out-dir build --copy-files && rm -f build/**/*.test.js",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:npm": "rm -rf components && mkdir components &&  babel src/components -d components --copy-files && rm -rf assets && mkdir assets &&  babel src/assets -d assets --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
